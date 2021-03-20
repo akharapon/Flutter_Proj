@@ -3,56 +3,98 @@ import 'package:flutter/material.dart';// TapboxA manages its own state.
 //------------------------- TapboxA ----------------------------------
 
 class TapboxA extends StatefulWidget {
-  TapboxA({Key key}) : super(key: key);
-
   @override
   _TapboxAState createState() => _TapboxAState();
 }
 
-class _TapboxAState extends State<TapboxA> {
-  bool _active = false;
+class _TapboxAState extends State<TapboxA > {
+  @override
+  
 
-  void _handleTap() {
-    setState(() {
-      _active = !_active;
-    });
-  }
-
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: _handleTap,
-      child: Container(
-        child: Center(
-          child: Text(
-            _active ? 'Active' : 'Inactive',
-            style: TextStyle(fontSize: 32.0, color: Colors.white),
+  Widget titleSection = Container(
+    padding: const EdgeInsets.all(32),
+    child: Row(
+      children: [
+        Expanded(
+          /*1*/
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              /*2*/
+              Container(
+                padding: const EdgeInsets.only(bottom: 5),
+                child: Text(
+                  'อาการ',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
-        width: 200.0,
-        height: 200.0,
-        decoration: BoxDecoration(
-          color: _active ? Colors.lightGreen[700] : Colors.grey[600],
-        ),
-      ),
-    );
-  }
-}
-
-//------------------------- MyApp ----------------------------------
-
-class MyApp extends StatelessWidget {
-  @override
+      ],
+    ),
+  );
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Flutter Demo'),
-        ),
-        body: Center(
-          child: TapboxA(),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.green[100],
+        title: Text("Covid-19"),
+      ),
+      backgroundColor: Colors.white,
+      body: SingleChildScrollView(
+        child: Stack(
+          children: [
+            Container(
+              child: Column(children: <Widget>[
+                Image.asset(            
+              'images/okn.jpg',            
+              width: 600,            
+              height: 320,            
+              fit: BoxFit.cover,            
+            ),
+            titleSection
+            ]),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 350, left: 30, right: 30),
+              child: Column(
+                children: [
+                  Text(""),
+                  Text(""),
+                  Text('อาการทั่วไปมีดังนี้ '),
+                  Text(""),
+                  Text(" -มีไข้"),
+                  Text(""),
+                  Text(" -ไอแห้ง"),
+                  Text(""),
+                  Text(" -อ่อนเพลีย"),
+                  Text(""),
+                  Text("อาการที่พบไม่บ่อยนักมีดังนี้"),
+                  Text(""),
+                  Text(" -ปวดเมื่อยเนื้อตัว"),
+                  Text(""),
+                  Text(" -เจ็บคอ"),
+                  Text(""),
+                  Text(" -ท้องเสีย"),
+                  Text(""),
+                  Text(" -ปวดศีรษะ"),
+                  Text(""),
+                  Text(" -ตาแดง"),
+                  Text(""),
+                  Text(" -สูญเสียความสามารถในการดมกลิ่นและรับรส"),
+                  Text(""),
+                  Text(" -มีผื่นบนผิวหนัง หรือนิ้วมือนิ้วเท้าเปลี่ยนสี"),
+                  Text(""),
+                ],
+              ),
+            )
+          ],
         ),
       ),
     );
   }
 }
+
+

@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'News Demo',
       theme: ThemeData(
         // This is the theme of your application.
         // Try running your application with "flutter run". You'll see the
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.green,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Covid-19'),
     );
   }
 }
@@ -69,14 +69,14 @@ class _MyHomePageState extends State<MyHomePage> {
               Container(
                 padding: const EdgeInsets.only(bottom: 5),
                 child: Text(
-                  'Oeschinen Lake Campground',
+                  'สถานการณ์ Covid-19 วันนี้',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
               Text(
-                'Kandersteg, Switzerland',
+                'วันที่ 17 มีนาคม 2564',
                 style: TextStyle(
                   color: Colors.grey[500],
                 ),
@@ -93,12 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget textSection = Container(
     padding: const EdgeInsets.all(32),
     child: Text(
-      'Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese '
-          'Alps. Situated 1,578 meters above sea level, it is one of the '
-          'larger Alpine Lakes. A gondola ride from Kandersteg, followed by a '
-          'half-hour walk through pastures and pine forest, leads you to the '
-          'lake, which warms to 20 degrees Celsius in the summer. Activities '
-          'enjoyed here include rowing, and riding the summer toboggan run.',
+      'โควิด-19 ส่งผลต่อผู้คนในรูปแบบที่แตกต่างกันไป ผู้ที่ติดเชื้อส่วนใหญ่จะมีอาการเล็กน้อยถึงปานกลาง และหายจากโรคได้เองโดยไม่ต้องเข้ารักษาในโรงพยาบาล',
       softWrap: true,
     ),
   );
@@ -118,7 +113,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   MaterialPageRoute(builder: (context) => TapboxA()),
                 );
               },
-              child:_buildButtonColumn(color, Icons.call, 'CALL')),
+              child:_buildButtonColumn(color, Icons.airline_seat_individual_suite_sharp, 'อาการ')),
               GestureDetector(
               onTap: (){
                 Navigator.push(
@@ -126,7 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   MaterialPageRoute(builder: (context) => ParentWidgetB()),
                 );
               },
-              child:_buildButtonColumn(color, Icons.call, 'ROUTE')),
+              child:_buildButtonColumn(color, Icons.admin_panel_settings_sharp, 'ป้องกัน')),
               GestureDetector(
               onTap: (){
                 Navigator.push(
@@ -135,7 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   MaterialPageRoute(builder: (context) => ParentWidgetC()),
                 );
               },
-              child:_buildButtonColumn(color, Icons.call, 'SHARE')),
+              child:_buildButtonColumn(color, Icons.clean_hands_sharp, 'รักษา')),
         ],
       ),
     );
@@ -146,7 +141,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: ListView(
           children: <Widget>[
             Image.asset(            
-              'images/p.jpg',            
+              'images/19C.jpg',            
               width: 600,            
               height: 240,            
               fit: BoxFit.cover,            
